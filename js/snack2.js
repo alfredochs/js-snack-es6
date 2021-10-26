@@ -41,8 +41,6 @@ function generaNumeroRandom() {
 // console.log(generaNumeroRandom());//num random invocato per prova
 
 let nomeFalli = [];
-let nomi = "";
-let puntiRandom = 0;
 for (let i = 0; i < squadre.length; i++) {
     const datiSquadra = squadre[i];
     // const { punti } = datiSquadra;
@@ -59,5 +57,6 @@ for (let i = 0; i < squadre.length; i++) {
     );
 }
 console.log(nomeFalli);
+console.log(JSON.stringify(nomeFalli));
 
 

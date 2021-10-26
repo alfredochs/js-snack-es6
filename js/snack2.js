@@ -32,14 +32,32 @@ const squadre = [
 ];
 
 console.log(squadre);
-//Genera Numero Random 
-function generaNumeroRandom(max) {
-    return Math.floor(Math.random() * max);
-}
 
-for (let i = 0; i < squadre.length; i++) {
-    const squadreSingole = squadre[i];
-    console.log(squadreSingole);
-    const { punti, falli } = squadre;
-    console.log();
+//Genera Numero Random 
+function generaNumeroRandom() {
+    let nRandom = parseInt(Math.ceil(Math.random() * 20));
+    return nRandom;
 }
+// console.log(generaNumeroRandom());//num random invocato per prova
+
+let nomeFalli = [];
+let nomi = "";
+let puntiRandom = 0;
+for (let i = 0; i < squadre.length; i++) {
+    const datiSquadra = squadre[i];
+    // const { punti } = datiSquadra;
+    datiSquadra.punti = generaNumeroRandom();
+    datiSquadra.falli = generaNumeroRandom();
+    // console.log(datiSquadra);
+    let nomi = datiSquadra.nome;
+    let falliSubiti = datiSquadra.falli;
+    nomeFalli.push(
+        {
+            nome: `${nomi}`,
+            falli: `${falliSubiti}`
+        }
+    );
+}
+console.log(nomeFalli);
+
+
